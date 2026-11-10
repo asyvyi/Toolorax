@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toolorax</title>
+    <link rel="icon" type="image/png" href="TooloraxL.png">
+    <meta name="description"
+        content="Toolorax is a free online converter for images, currencies, weights, lengths, and more.">
+    <meta name="keywords"
+        content="online converter, image converter, currency converter, Toolorax, Games, Time Zone Converter, Word Counter, Measurements converters, Percentage calculator">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ImageToolsTitle.css">
+    <link rel="stylesheet" href="ImageConverter.css">
+    <link rel="stylesheet" href="SmartToolsTitle.css">
+    <link rel="stylesheet" href="CurrencyStyle.css">
+    <link rel="stylesheet" href="TimeZoneConverter.css">
+    <link rel="stylesheet" href="percentage-calculator.css">
+    <link rel="stylesheet" href="date-calculator.css">
+    <link rel="stylesheet" href="tip-calculator.css">
+    <link rel="stylesheet" href="char-counter.css">
+    <link rel="stylesheet" href="guess-number.css">
+    <link rel="stylesheet" href="GamesTitle.css">
+    <link rel="stylesheet" href="reaction-game.css">
+    <link rel="stylesheet" href="MeasurementTitle.css">
+    <link rel="stylesheet" href="MeasurementConverter.css">
+    <link rel="stylesheet" href="WeightConverter.css">
+    <link rel="stylesheet" href="VolumeConverter.css">
+    <link rel="stylesheet" href="TemperatureConverter.css">
+    <link rel="stylesheet" href="SpeedConverter.css">
+    <link rel="stylesheet" href="DataConverter.css">
+</head>
+
+<body>
+    <div id="title">
+        Toolorax
+    </div>
+    <div id="sentence">
+        "Your daily life, simplified in one place"
+        <ul style="list-style-type: none; padding-left: 0; text-align: left;">
+            <li>- Image Tools</li>
+            <li>- Smart Tools</li>
+            <li>- Games </li>
+            <li>- Measurments Converters (Measurments, Weight, Volume, etc.) </li>
+        </ul>
+    </div>
+
+    <hr style="border: 0; height: 3px; background-color: #23221f; margin: 20px 0; width: 1300px;">
+
+    <div id="imagetools-section-title">
+        Image Tools
+    </div>
+
+    <h1>Image Converter (PNG ↔ JPG ↔ WebP)</h1>
+
+    <div class="converter-box">
+        <!-- Upload / Drag & Drop -->
+        <div class="drop-area" id="dropArea">
+            <p id="dropText">Drag & Drop your image here</p>
+            <span>or click to upload</span>
+        </div>
+
+        <!-- Hidden file input -->
+        <input type="file" id="upload" accept="image/*" style="display:none;">
+
+        <!-- Format selector -->
+        <select id="format">
+            <option value="image/png">Convert to PNG</option>
+            <option value="image/jpeg">Convert to JPG</option>
+            <option value="image/webp">Convert to WebP</option>
+        </select>
+
+        <!-- Convert button -->
+        <button id="convertBtn">Convert & Download</button>
+
+        <!-- Canvas (hidden) -->
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <script src="ImageConverter.js"></script>
+
+    <div id="smarttools-section-title">
+        Smart Tools
+    </div>
+
+    <h1>Top 50 Currency Converter 💰</h1>
+    <div class="currency-converter">
+        <div class="converter-side">
+            <input type="number" class="amount" placeholder="Amount">
+            <select class="from-currency"></select>
+        </div>
+        <div class="divider"></div>
+        <div class="converter-side">
+            <select class="to-currency"></select>
+            <button class="convert-btn">Convert</button>
+            <p class="result"></p>
+        </div>
+    </div>
+    <script src="CurrencyStyle.js"></script>
+
+    <h1>Time Zone Converter ⏰</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input time + from timezone -->
+        <div class="side">
+            <input type="time" id="inputTime">
+            <select id="fromZone">
+                <option value="UTC-8">PST (UTC-8)</option>
+                <option value="UTC-7">MST (UTC-7)</option>
+                <option value="UTC-6">CST (UTC-6)</option>
+                <option value="UTC-5">EST (UTC-5)</option>
+                <option value="UTC+0">GMT (UTC+0)</option>
+                <option value="UTC+1">CET (UTC+1)</option>
+                <option value="UTC+5.5">IST (UTC+5:30)</option>
+                <option value="UTC+9">JST (UTC+9)</option>
+                <option value="UTC+10">AEST (UTC+10)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to timezone + answer -->
+        <div class="side">
+            <select id="toZone">
+                <option value="UTC-8">PST (UTC-8)</option>
+                <option value="UTC-7">MST (UTC-7)</option>
+                <option value="UTC-6">CST (UTC-6)</option>
+                <option value="UTC-5">EST (UTC-5)</option>
+                <option value="UTC+0">GMT (UTC+0)</option>
+                <option value="UTC+1">CET (UTC+1)</option>
+                <option value="UTC+5.5">IST (UTC+5:30)</option>
+                <option value="UTC+9">JST (UTC+9)</option>
+                <option value="UTC+10">AEST (UTC+10)</option>
+            </select>
+
+            <label for="timeResult" class="answer-label">Answer:</label>
+            <div id="timeResult" class="answer-box">--:--</div>
+        </div>
+
+    </div>
+
+    <script src="TimeZoneConverter.js"></script>
+
+    <!-- Heading -->
+    <h1>Percentage Calculator %</h1>
+
+    <!-- Percentage Calculator Box -->
+    <div class="percentage-box">
+        <input type="number" id="base" placeholder="Enter number">
+        <input type="number" id="percent" placeholder="Enter %">
+        <select id="type">
+            <option value="of">Find % of number</option>
+            <option value="increase">Increase by %</option>
+            <option value="decrease">Decrease by %</option>
+        </select>
+        <button id="calcBtn">Calculate</button>
+        <div id="result">Result: </div>
+    </div>
+    <!-- Link to JS -->
+    <script src="percentage-calculator.js"></script>
+
+
+    <h1>Date Calculator 🗓️</h1>
+
+    <div class="date-box">
+        <input type="date" id="date1" placeholder="Start date">
+        <input type="date" id="date2" placeholder="End date">
+        <button id="dateBtn">Calculate</button>
+        <div id="dateResult">Difference: </div>
+    </div>
+    <!-- Link JS -->
+    <script src="date-calculator.js"></script>
+
+
+    <h1>Tip Calculator (total cost) 📖</h1>
+
+    <div class="tip-box">
+        <input type="number" id="bill" placeholder="Total bill ($)">
+        <input type="number" id="people" placeholder="Number of people">
+        <input type="number" id="tipPercent" placeholder="Tip %">
+        <button id="tipBtn">Calculate</button>
+        <div id="tipResult">Each pays: </div>
+    </div>
+
+    <!-- Link JS -->
+    <script src="tip-calculator.js"></script>
+
+    <h1>Character & Word Counter</h1>
+
+    <div class="char-box">
+        <textarea id="textInput" placeholder="Type or paste text here..." rows="3"></textarea>
+        <div class="char-buttons">
+            <button id="clearBtn">Clear</button>
+        </div>
+        <div id="charResult">Words: 0, Characters: 0</div>
+    </div>
+
+    <!-- Link JS -->
+    <script src="char-counter.js"></script>
+
+
+    <div id="games-section-title">
+        Games 🎲
+    </div>
+
+    <h1>Guess the Number 🎲</h1>
+
+    <div class="guess-box">
+        <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+        <input type="number" id="guessInput" placeholder="Enter your guess">
+        <button id="guessBtn">Guess</button>
+        <button id="resetBtn">Reset</button>
+        <div id="guessResult">Attempts: 0</div>
+    </div>
+
+    <!-- Link JS -->
+    <script src="guess-number.js"></script>
+
+
+
+    <h1>Reaction Speed Game ⚡</h1>
+
+    <div class="reaction-box">
+        <p id="reactionText">Click Start when ready!</p>
+        <button id="startBtn">Start</button>
+        <div id="reactionResult">Your reaction time: 0 ms</div>
+    </div>
+
+    <!-- Link JS -->
+    <script src="reaction-game.js"></script>
+
+
+    <h1>Coin Flip 🪙</h1>
+
+    <div class="coin-box">
+        <p>Click Flip to see if you win!</p>
+
+        <!-- Coin element -->
+        <div class="coin" id="coin">
+            <div class="front">Heads</div>
+            <div class="back">Tails</div>
+        </div>
+
+        <button id="flipBtn">Flip Coin</button>
+        <div id="coinResult">Result: -</div>
+    </div>
+
+    <link rel="stylesheet" href="coin-flip.css">
+    <script src="coin-flip.js"></script>
+
+
+
+    <div id="measurements-section-title">
+        Measurements Converters
+    </div>
+
+    <h1>Measurement Converter 📏</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input value + from unit -->
+        <div class="side">
+            <input type="number" id="inputMeasure" placeholder="Enter value">
+            <select id="fromUnit">
+                <option value="km">Kilometers (km)</option>
+                <option value="hm">Hectometers (hm)</option>
+                <option value="dam">Dekameters (dam)</option>
+                <option value="m">Meters (m)</option>
+                <option value="dm">Decimeters (dm)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="mm">Millimeters (mm)</option>
+                <option value="in">Inches (in)</option>
+                <option value="ft">Feet (ft)</option>
+                <option value="yd">Yards (yd)</option>
+                <option value="mi">Miles (mi)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toUnit">
+                <option value="km">Kilometers (km)</option>
+                <option value="hm">Hectometers (hm)</option>
+                <option value="dam">Dekameters (dam)</option>
+                <option value="m">Meters (m)</option>
+                <option value="dm">Decimeters (dm)</option>
+                <option value="cm">Centimeters (cm)</option>
+                <option value="mm">Millimeters (mm)</option>
+                <option value="in">Inches (in)</option>
+                <option value="ft">Feet (ft)</option>
+                <option value="yd">Yards (yd)</option>
+                <option value="mi">Miles (mi)</option>
+            </select>
+
+            <label for="measureResult" class="answer-label">Answer:</label>
+            <div id="measureResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="MeasurementConverter.js"></script>
+
+    <h1>Weight/Mass Converter ⚖️</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input weight + from unit -->
+        <div class="side">
+            <input type="number" id="inputWeight" placeholder="Enter weight">
+            <select id="fromWeightUnit">
+                <option value="mg">Milligram (mg)</option>
+                <option value="cg">Centigram (cg)</option>
+                <option value="dg">Decigram (dg)</option>
+                <option value="g">Gram (g)</option>
+                <option value="dag">Decagram (dag)</option>
+                <option value="hg">Hectogram (hg)</option>
+                <option value="kg">Kilogram (kg)</option>
+                <option value="t">Metric Ton (t)</option>
+                <option value="oz">Ounce (oz)</option>
+                <option value="lb">Pound (lb)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toWeightUnit">
+                <option value="mg">Milligram (mg)</option>
+                <option value="cg">Centigram (cg)</option>
+                <option value="dg">Decigram (dg)</option>
+                <option value="g">Gram (g)</option>
+                <option value="dag">Decagram (dag)</option>
+                <option value="hg">Hectogram (hg)</option>
+                <option value="kg">Kilogram (kg)</option>
+                <option value="t">Metric Ton (t)</option>
+                <option value="oz">Ounce (oz)</option>
+                <option value="lb">Pound (lb)</option>
+            </select>
+
+            <label for="weightResult" class="answer-label">Answer:</label>
+            <div id="weightResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="WeightConverter.js"></script>
+
+    <h1>Volume Converter 💧</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input volume + from unit -->
+        <div class="side">
+            <input type="number" id="inputVolume" placeholder="Enter volume">
+            <select id="fromVolumeUnit">
+                <option value="ml">Milliliter (mL)</option>
+                <option value="cl">Centiliter (cL)</option>
+                <option value="dl">Deciliter (dL)</option>
+                <option value="l">Liter (L)</option>
+                <option value="dal">Decaliter (daL)</option>
+                <option value="hl">Hectoliter (hL)</option>
+                <option value="kl">Kiloliter (kL)</option>
+                <option value="m3">Cubic meter (m³)</option>
+                <option value="gal">US Gallon (gal)</option>
+                <option value="qt">US Quart (qt)</option>
+                <option value="pt">US Pint (pt)</option>
+                <option value="cup">US Cup (cup)</option>
+                <option value="floz">US Fluid Ounce (fl oz)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toVolumeUnit">
+                <option value="ml">Milliliter (mL)</option>
+                <option value="cl">Centiliter (cL)</option>
+                <option value="dl">Deciliter (dL)</option>
+                <option value="l">Liter (L)</option>
+                <option value="dal">Decaliter (daL)</option>
+                <option value="hl">Hectoliter (hL)</option>
+                <option value="kl">Kiloliter (kL)</option>
+                <option value="m3">Cubic meter (m³)</option>
+                <option value="gal">US Gallon (gal)</option>
+                <option value="qt">US Quart (qt)</option>
+                <option value="pt">US Pint (pt)</option>
+                <option value="cup">US Cup (cup)</option>
+                <option value="floz">US Fluid Ounce (fl oz)</option>
+            </select>
+
+            <label for="volumeResult" class="answer-label">Answer:</label>
+            <div id="volumeResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="VolumeConverter.js"></script>
+
+    <h1>Speed Converter 🏎️</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input speed + from unit -->
+        <div class="side">
+            <input type="number" id="inputSpeed" placeholder="Enter speed">
+            <select id="fromSpeedUnit">
+                <option value="kmh">Kilometers per hour (km/h)</option>
+                <option value="ms">Meters per second (m/s)</option>
+                <option value="mph">Miles per hour (mph)</option>
+                <option value="fts">Feet per second (ft/s)</option>
+                <option value="knots">Knots (kn)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toSpeedUnit">
+                <option value="kmh">Kilometers per hour (km/h)</option>
+                <option value="ms">Meters per second (m/s)</option>
+                <option value="mph">Miles per hour (mph)</option>
+                <option value="fts">Feet per second (ft/s)</option>
+                <option value="knots">Knots (kn)</option>
+            </select>
+
+            <label for="speedResult" class="answer-label">Answer:</label>
+            <div id="speedResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="SpeedConverter.js"></script>
+
+    <h1>Temperature Converter 🌡️</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input temperature + from unit -->
+        <div class="side">
+            <input type="number" id="inputTemp" placeholder="Enter temperature">
+            <select id="fromTempUnit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toTempUnit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
+
+            <label for="tempResult" class="answer-label">Answer:</label>
+            <div id="tempResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="TemperatureConverter.js"></script>
+
+    <h1>Data/Information Converter 💾</h1>
+
+    <div class="converter-box">
+
+        <!-- LEFT SIDE: input data + from unit -->
+        <div class="side">
+            <input type="number" id="inputData" placeholder="Enter value">
+            <select id="fromDataUnit">
+                <option value="bit">Bit (b)</option>
+                <option value="nibble">Nibble (4 bits)</option>
+                <option value="B">Byte (B)</option>
+                <option value="KB">Kilobyte (KB)</option>
+                <option value="MB">Megabyte (MB)</option>
+                <option value="GB">Gigabyte (GB)</option>
+                <option value="TB">Terabyte (TB)</option>
+                <option value="PB">Petabyte (PB)</option>
+            </select>
+        </div>
+
+        <!-- MIDDLE LINE + arrow -->
+        <div class="middle-line">
+            <div class="arrow">→</div>
+        </div>
+
+        <!-- RIGHT SIDE: to unit + answer box -->
+        <div class="side">
+            <select id="toDataUnit">
+                <option value="bit">Bit (b)</option>
+                <option value="nibble">Nibble (4 bits)</option>
+                <option value="B">Byte (B)</option>
+                <option value="KB">Kilobyte (KB)</option>
+                <option value="MB">Megabyte (MB)</option>
+                <option value="GB">Gigabyte (GB)</option>
+                <option value="TB">Terabyte (TB)</option>
+                <option value="PB">Petabyte (PB)</option>
+            </select>
+
+            <label for="dataResult" class="answer-label">Answer:</label>
+            <div id="dataResult" class="answer-box">0</div>
+        </div>
+
+    </div>
+
+    <script src="DataConverter.js"></script>
+
+
+</body>
+
+</html>

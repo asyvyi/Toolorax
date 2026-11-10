@@ -1,0 +1,54 @@
+/* Guess the Number Box */
+.guess-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* white background */
+    border-radius: 25px;       /* rounded sides */
+    padding: 15px 20px;
+    gap: 10px;
+    max-width: 1000px;         /* wide rectangle */
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 16px;
+}
+
+/* Input */
+.guess-box input {
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Buttons container */
+.guess-box button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50; /* light green */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 5px;
+}
+
+.guess-box button:hover {
+    background-color: #45a049;
+}
+
+/* Result */
+#guessResult {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#resetBtn{
+    background-color: rgb(255, 31, 31);
+}
+
+#resetBtn button:hover{
+    background-color: rgb(163, 0, 0);
+}

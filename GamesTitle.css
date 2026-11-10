@@ -1,0 +1,9 @@
+#games-section-title {
+  font-size: 60px;           /* Big text */
+  font-weight: bold;          /* Strong emphasis */
+  text-align: center;         /* Centered */
+  color: #4CAF50;             /* Green, matches your arrows */
+  margin: 60px 0 40px;        /* Spacing above and below */
+  letter-spacing: 2px;        /* Optional styling for clean look */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* subtle depth */
+}

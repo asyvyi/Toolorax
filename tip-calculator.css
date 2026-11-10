@@ -1,0 +1,91 @@
+/* Tip Calculator Box */
+.tip-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff; /* white background */
+    border-radius: 25px;       /* rounded sides */
+    padding: 15px 20px;
+    gap: 10px;
+    max-width: 1000px;         /* wide rectangle */
+    width: 90%;                /* responsive */
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.tip-box input {
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    flex: 1;
+}
+
+/* Button */
+.tip-box button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50; /* light green */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tip-box button:hover {
+    background-color: #45a049;
+}
+
+/* Result */
+#tipResult {
+    margin-left: 15px;
+    font-weight: bold;
+    min-width: 150px;
+}
+
+/* Tip & Percentage calculator responsive fix */
+.tip-box, .percentage-box {
+    width: 90%;          /* almost full width */
+    max-width: 500px;    /* not too wide on desktop */
+    margin: 20px auto;
+    padding: 15px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* stack inputs vertically */
+    gap: 12px;
+    background-color: #ffffff;
+}
+
+/* Inputs, select, buttons full width */
+.tip-box input,
+.percentage-box input,
+.percentage-box select,
+.tip-box button,
+.percentage-box button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 15px;
+}
+
+/* Results text */
+#tipResult, #result {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Small screens adjustments */
+@media screen and (max-width: 400px) {
+    .tip-box, .percentage-box {
+        padding: 12px 10px;
+        gap: 10px;
+    }
+    
+    .tip-box button,
+    .percentage-box button {
+        padding: 14px;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,50 @@
+.reaction-box {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1000px;
+    width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+/* Instruction text */
+#reactionText {
+    font-size: 28px; /* bigger text */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* All buttons */
+.reaction-box button {
+    padding: 25px 50px; /* bigger buttons */
+    border-radius: 30px; /* more rounded */
+    border: none;
+    font-size: 22px; /* bigger text */
+    cursor: pointer;
+    transition: 0.2s;
+    min-width: 250px; /* wider button */
+}
+
+/* Start button green */
+#startBtn {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+/* Wait / Click button red/green */
+#reactionBtn {
+    background-color: #f44336; 
+    color: white;
+}
+
+/* Result */
+#reactionResult {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 20px;
+}

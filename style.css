@@ -1,0 +1,24 @@
+body{
+    background-color: #ffe2c8;
+    margin: 0;
+}
+
+#title{
+  font-size: 100px;           /* Big text */
+  font-weight: bold;          /* Strong emphasis */
+  text-align: center;         /* Centered */
+  color: #000000;             /* Green, matches your arrows */
+  margin: 10px 0 30px;        /* Spacing above and below */
+  letter-spacing: 2px;        /* Optional styling for clean look */
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* subtle depth */
+}
+
+#sentence{
+  font-size: 20px;           /* Big text */
+  font-weight: bold;          /* Strong emphasis */
+  text-align: center;         /* Centered */
+  color: #5c5c5c;             /* Green, matches your arrows */
+  margin: 5px 0 20px;        /* Spacing above and below */
+  letter-spacing: 2px;        /* Optional styling for clean look */
+  /*text-shadow: 2px 2px 6px rgba(0,0,0,0.2); /* subtle depth */
+}

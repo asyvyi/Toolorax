@@ -1,0 +1,46 @@
+/* Date Calculator Box */
+.date-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff; /* white background */
+    border-radius: 25px;       /* rounded sides */
+    padding: 15px 20px;
+    gap: 10px;
+    max-width: 1000px;         /* wide rectangle */
+    width: 90%;                /* responsive */
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Inputs */
+.date-box input {
+    padding: 10px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    flex: 1;
+}
+
+/* Button */
+.date-box button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: #4CAF50; /* light green */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.date-box button:hover {
+    background-color: #45a049;
+}
+
+/* Result */
+#dateResult {
+    margin-left: 15px;
+    font-weight: bold;
+    min-width: 150px;
+}
